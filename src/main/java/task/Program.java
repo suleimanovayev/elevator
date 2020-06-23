@@ -74,7 +74,6 @@ public class Program {
                 floor.getPassengersOnFloor().removeAll(passengersInElevator);
                 floor.getPassengersOnFloor().addAll(passengers);
             }
-
             addNeededFloor(passengers, floorNumGenerate);
             setTime(passengers);
             direct = addNumsForDisplay(elevator);
@@ -88,7 +87,6 @@ public class Program {
             } else {
                 floor = floor.getPrev();
             }
-
         }
         System.out.println("----All people are outside!----");
     }
@@ -222,7 +220,6 @@ public class Program {
         } catch (IndexOutOfBoundsException e) {
             return passengersInElevator;
         }
-
         if (up) {
             passengersInElevator = passengersUp(floor, passengersLetInside);
         } else {

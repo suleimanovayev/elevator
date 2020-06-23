@@ -20,7 +20,6 @@ public class FloorGenerator {
                 floors[++size] = floor;
                 floors[size].setPrev(prev);
             }
-
         }
         return floors;
     }

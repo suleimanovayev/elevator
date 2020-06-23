@@ -26,7 +26,6 @@ public class Passenger implements Comparator<Passenger> {
         this.timeWaiting = timeWaiting;
     }
 
-
     @Override
     public String toString() {
         return "Passenger{" +
