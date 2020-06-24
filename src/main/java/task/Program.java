@@ -54,12 +54,11 @@ public class Program {
             passengersLetInside = MAX_PASSENGERS - elevator.getPeopleInside().size();
 
             if (elevator.getPeopleInside().size() == 0) {
+                floor.getPassengersOnFloor().addAll(passengers);
                 if (floor.getPassengersOnFloor().size() == 0) {
                     floor.getPassengersOnFloor().addAll(passengers);
                     int floorNumber = moveOnCall(floors);
                     floor = floors[floorNumber];
-                } else {
-                    floor.getPassengersOnFloor().addAll(passengers);
                 }
                 passengersInElevator = selectPassengers(floor, elevator, passengersLetInside);
                 floor.getPassengersOnFloor().removeAll(passengersInElevator);
@@ -145,7 +144,7 @@ public class Program {
     private void addNeededFloor(List<Passenger> passengerFirst, int floor) {
         passengerFirst.forEach(passenger -> {
             int floorNumber = FloorGenerator
-                    .generateFloorForPassenger(1, maxFloor, floor);
+                    .generateFloorForPassenger(FIRST_FLOOR, maxFloor, floor);
             passenger.setNeededFloor(floorNumber);
         });
     }
