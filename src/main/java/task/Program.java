@@ -53,9 +53,9 @@ public class Program {
 
             passengersLetInside = MAX_PASSENGERS - elevator.getPeopleInside().size();
 
-            if (elevator.getPeopleInside().size() == 0) {
+            if (elevator.getPeopleInside().isEmpty()) {
                 floor.getPassengersOnFloor().addAll(passengers);
-                if (floor.getPassengersOnFloor().size() == 0) {
+                if (floor.getPassengersOnFloor().isEmpty()) {
                     floor.getPassengersOnFloor().addAll(passengers);
                     int floorNumber = moveOnCall(floors);
                     floor = floors[floorNumber];
@@ -91,7 +91,7 @@ public class Program {
     }
 
     private boolean isEmptyElevator(Elevator elevator) {
-        return elevator.getPeopleInside().size() == 0;
+        return elevator.getPeopleInside().isEmpty();
     }
 
     private void generatePassengersForFloors(Floor[] floors) {
@@ -186,7 +186,7 @@ public class Program {
 
     private boolean isEmptyFloors(Floor[] floors) {
         return Arrays.stream(floors)
-                .allMatch(x -> x.getPassengersOnFloor().size() == 0);
+                .allMatch(x -> x.getPassengersOnFloor().isEmpty());
     }
 
     private List<Passenger> passengersUp(Floor floor, int passengersQuantity) {
